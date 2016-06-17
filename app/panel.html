@@ -1,0 +1,29 @@
+<!-- Note: don't use inline scripts because they aren't executed by Chrome -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SOAP Analyzer</title>
+  </head>
+  <body>
+
+    <div id="container">
+      <div id="header"></div>
+      <div id="content"></div>
+      <div id="footer"></div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="scripts/xml2json.js"></script>
+    <script src="scripts/util.js"></script>
+
+    <script src="scripts/app/views/NetworkView/NetworkView.js"></script>
+    <script src="scripts/app/app.js"></script>
+  </body>
+</html>
