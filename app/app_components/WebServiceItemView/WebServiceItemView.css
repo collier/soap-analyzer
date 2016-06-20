@@ -1,0 +1,30 @@
+
+.network .web-service-list .list-group-item:first-child,
+.network .web-service-list .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.network .web-service-list .list-group-item:first-child {
+  border-top: 0;
+}
+
+.network .web-service-list .list-group-item {
+  padding: 5px 15px;
+  font-size: 11px;
+  line-height: 120%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 0;
+  -webkit-user-select: none;
+}
+
+.network .web-service-list .list-group-item.selected {
+  background-color: rgb(56, 121, 217);
+  color: white;
+}
+
+.network .web-service-list .list-group-item:hover .service-name {
+  text-decoration: underline;
+}

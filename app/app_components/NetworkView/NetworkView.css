@@ -1,0 +1,11 @@
+
+.network .web-service-list {
+  padding-right: 0;
+  overflow-y: auto;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+
+.network .service-details-container {
+  overflow: hidden;
+}

@@ -12,7 +12,6 @@ var UtilClass = Marionette.Object.extend({
         url : chrome.extension.getURL(location),
         async : false,
         success : function(data) {
-          console.log(data);
           self.templates[location] = Handlebars.compile(data);
           template = self.templates[location];
         }

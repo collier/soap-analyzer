@@ -1,0 +1,10 @@
+
+.service-details {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.service-details .request-xml,
+.service-details .response-xml {
+  white-space: pre-wrap;
+}

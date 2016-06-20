@@ -1,0 +1,9 @@
+
+html {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, sans-serif !important;
+}

@@ -3,16 +3,16 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
-  "devtools_page": "devtools.html",
+  "devtools_page": "chrome_components/devtools/devtools.html",
   "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
+    "16": "chrome_components/images/icon-16.png",
+    "128": "chrome_components/images/icon-128.png"
   },
   "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/chromereload.js",
-      "scripts/background.js"
+      "chrome_components/background/chromereload.js",
+      "chrome_components/background/background.js"
     ]
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
