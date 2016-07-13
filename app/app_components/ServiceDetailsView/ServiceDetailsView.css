@@ -1,10 +1,40 @@
 
-.service-details {
+.service-detail {
   overflow-y: auto;
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
 
-.service-details .request-xml,
-.service-details .response-xml {
+.service-detail .request-xml,
+.service-detail .response-xml {
   white-space: pre-wrap;
+}
+
+.service-details .nav-tabs {
+  height: 34px;
+  padding-left: 10px;
+}
+
+.service-details .nav-tabs > li > a, 
+.service-details .nav-tabs > li > a:hover, 
+.service-details .nav-tabs > li > a:focus {
+  height: 34px;
+  line-height: 1.5;
+}
+
+.service-details .nav-tabs > li.active > a, 
+.service-details .nav-tabs > li.active > a:hover, 
+.service-details .nav-tabs > li.active > a:focus {
+  border-top-color: transparent;
+  background-color: #428bca;
+  color: #fff;
+}
+
+.service-details .nav-tabs > li > a {
+  border-radius: 0;
+  padding: 5px 15px;
+  -webkit-user-select: none;
+}
+
+.service-details .service-detail {
+  padding-left: 15px;
 }
