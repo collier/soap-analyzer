@@ -1,20 +1,14 @@
 <div class="service-details">
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Request</a></li>
-    <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Response</a></li>
-    <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">All</a></li>
-    <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Details</a></li>
+    <li class="active"><a href="#request" data-toggle="tab">Request</a></li>
+    <li><a href="#response" data-toggle="tab">Response</a></li>
+    <li><a href="#all" data-toggle="tab">All</a></li>
+    <li><a href="#details" data-toggle="tab">Details</a></li>
   </ul>
-  <div class="service-detail">
-    <div>
-      <h5>Request</h5>
-      <div class="request-date"></div>
-      <div class="request-xml"></div>
-    </div>
-    <div>
-      <h5>Response</h5>
-      <div class="response-date"></div>
-      <div class="response-xml"></div>
-    </div>
+  <div class="service-detail tab-content">
+    <div role="tabpanel" class="tab-pane active pretty-xml" id="request"></div>
+    <div role="tabpanel" class="tab-pane pretty-xml" id="response"></div>
+    <div role="tabpanel" class="tab-pane" id="all"></div>
+    <div role="tabpanel" class="tab-pane" id="details"></div>
   </div>
 </div>

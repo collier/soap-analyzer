@@ -10,7 +10,8 @@
     "handlebars": "^4.0.5",
     "moment": "^2.13.0",
     "bootstrap": "^3.3.6",
-    "js-beautify": "^1.6.3"
+    "js-beautify": "^1.6.3",
+    "filesize": "^3.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

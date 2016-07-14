@@ -20,7 +20,7 @@
   -webkit-user-select: none;
 }
 
-.network .web-service-list .list-group-item.selected {
+.network .web-service-list .list-group-item-container .list-group-item.selected {
   background-color: rgb(56, 121, 217);
   color: white;
 }

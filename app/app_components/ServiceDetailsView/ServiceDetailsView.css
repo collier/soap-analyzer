@@ -1,12 +1,8 @@
 
 .service-detail {
   overflow-y: auto;
-  height: calc(100vh - 64px);
-}
-
-.service-detail .request-xml,
-.service-detail .response-xml {
-  white-space: pre-wrap;
+  height: calc(100vh - 74px);
+  margin-top: 10px;
 }
 
 .service-details .nav-tabs {

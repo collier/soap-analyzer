@@ -46,7 +46,6 @@ var NetworkView = Marionette.LayoutView.extend({
   },
 
   onServiceClick: function(collectionView, model) {
-    this.showChildView('serviceDetails', new LoadingView());
     this.showChildView('serviceDetails', new ServiceDetailsView({
       model: model
     }));
