@@ -1,12 +1,12 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "devtools_page": "chrome_components/devtools/devtools.html",
   "icons": {
-    "16": "chrome_components/images/icon-16.png",
-    "128": "chrome_components/images/icon-128.png"
+    "16": "chrome_components/images/code-16.png",
+    "128": "chrome_components/images/code-128.png"
   },
   "default_locale": "en",
   "background": {

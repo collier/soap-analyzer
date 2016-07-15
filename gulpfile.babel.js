@@ -108,9 +108,9 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('package', function () {
-  var manifest = require('./dist/manifest.json');
-  return gulp.src('dist/**')
-      .pipe($.zip('soap analyzer-' + manifest.version + '.zip'))
+  var manifest = require('./app/manifest.json');
+  return gulp.src('app/**')
+      .pipe($.zip('soap-analyzer-' + manifest.version + '.zip'))
       .pipe(gulp.dest('package'));
 });
 
