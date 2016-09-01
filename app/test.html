@@ -1,0 +1,15 @@
+<!-- Note: don't use inline scripts because they aren't executed by Chrome -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>launcher</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="../test.js"></script>
+  </head>
+  <body>
+    <!-- <iframe src="data:text/xml,&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;soapenv:Body&gt;&lt;GetAllTasksForUser xmlns=&quot;http://schemas.cordys.com/notification/workflow/1.0&quot;&gt;&lt;Target type=&quot;user&quot;&gt;cn=areber,cn=authenticated users,cn=cordys,cn=GDIT_BPM,o=ad.mosys&lt;/Target&gt;&lt;ShowNonWorkableItems&gt;false&lt;/ShowNonWorkableItems&gt;&lt;ReturnTaskData&gt;true&lt;/ReturnTaskData&gt;&lt;OrderBy&gt;Task.StartDate DESC&lt;/OrderBy&gt;&lt;/GetAllTasksForUser&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;"/> -->
+    <iframe id="xmlFrame" />
+  </body>
+</html>
