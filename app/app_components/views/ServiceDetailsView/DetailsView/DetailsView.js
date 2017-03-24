@@ -1,7 +1,7 @@
 
 var DetailsView = Marionette.ItemView.extend({
 
-  template: Util.compile('app_components/ServiceDetailsView/DetailsView/DetailsView.hbs'),
+  template: Util.compile('app_components/views/ServiceDetailsView/DetailsView/DetailsView.hbs'),
 
   initialize: function() {
     var request = this.model.get('request');

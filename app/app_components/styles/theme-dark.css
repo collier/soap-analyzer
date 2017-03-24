@@ -1,0 +1,66 @@
+
+/* Variables *********************
+ *
+ * Border Color = rgb(80, 80, 80)
+ * 
+ */
+
+.theme-dark .header {
+  border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+.theme-dark .header,
+.theme-dark .network,
+.theme-dark .service-details-container {
+  background-color: rgb(36, 36, 36);
+}
+
+.theme-dark .header .form-group {
+  color: #b9b9b9;
+}
+
+.theme-dark .service-detail {
+  color: white;
+}
+
+.theme-dark .network .web-service-list {
+  border-right: 1px solid rgb(80, 80, 80);
+}
+
+.theme-dark .service-details .nav-tabs {
+  border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+.theme-dark .network .web-service-list .list-group-item-container .list-group-item:not(.selected):hover {
+  background-color: rgba(199, 134, 38, 0.0980392);
+}
+
+.theme-dark .network .web-service-list .list-group-item-container .list-group-item {
+  color: #fff;
+  border:  0;
+}
+
+.theme-dark .network .web-service-list .list-group-item-container:nth-child(2n) .list-group-item {  
+  background-color: #333;
+}
+
+.theme-dark .network .web-service-list,
+.theme-dark .network .web-service-list .list-group-item-container:nth-child(2n+1) .list-group-item {  
+  background-color: rgb(41, 41, 41);
+}
+
+.theme-dark .service-details .nav-tabs > li > a {
+  color: #fff;
+}
+
+.theme-dark .service-details .nav-tabs > li.active > a {   
+  background-color: #5f5f5f;
+  color: #fff;
+  border: 1px solid rgb(80, 80, 80);
+}
+
+.theme-dark .service-details .nav > li > a:focus, 
+.theme-dark .service-details .nav > li > a:hover {
+  background-color: #c7c7c7;
+  color: #000;
+}

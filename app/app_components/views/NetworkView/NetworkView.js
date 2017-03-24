@@ -1,7 +1,7 @@
 
 var NetworkView = Marionette.LayoutView.extend({
 
-  template: Util.compile('app_components/NetworkView/NetworkView.hbs'),
+  template: Util.compile('app_components/views/NetworkView/NetworkView.hbs'),
 
   ui: {
     serviceUl: '.web-service-list .list-group',
@@ -17,7 +17,8 @@ var NetworkView = Marionette.LayoutView.extend({
 
   childEvents: {
     'collection:service:clicked': 'onServiceClick',
-    'collection:service:cleared': 'onClearLog'
+    'collection:service:cleared': 'onClearLog',
+    'toggle:envelope': 'onToggleEnvelope'
   },
 
   onBeforeShow: function() {
@@ -46,6 +47,7 @@ var NetworkView = Marionette.LayoutView.extend({
   },
 
   onServiceClick: function(collectionView, model) {
+    model.set(this.model.toJSON());
     this.showChildView('serviceDetails', new ServiceDetailsView({
       model: model
     }));
@@ -54,6 +56,13 @@ var NetworkView = Marionette.LayoutView.extend({
   onClearLog: function() {
     this.ui.serviceDiv.empty();
     this.webServiceList.collection.reset();
+  },
+
+  onToggleEnvelope : function(childView, hideEnvelope) {
+    this.model.set('hideEnvelope', hideEnvelope);
+    if(this.$('.selected').length > 0) {
+      this.$('.selected').click();
+    }
   }
 
 });

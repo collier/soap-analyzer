@@ -9,8 +9,8 @@
 }
 
 .network .web-service-list .list-group-item {
-  padding: 10px 15px;
-  font-size: 13px;
+  padding: 6px 15px;
+  font-size: 12px;
   line-height: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;

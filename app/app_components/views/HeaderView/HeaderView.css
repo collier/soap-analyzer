@@ -1,0 +1,16 @@
+
+.header {
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+  padding-top: 2px;
+  padding-left: 5px;
+}
+
+.header .form-group {
+  margin-left: 10px;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

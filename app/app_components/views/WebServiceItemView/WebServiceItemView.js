@@ -1,7 +1,7 @@
 
 var WebServiceItemView = Marionette.ItemView.extend({
 
-  template: Util.compile('app_components/WebServiceItemView/WebServiceItemView.hbs'),
+  template: Util.compile('app_components/views/WebServiceItemView/WebServiceItemView.hbs'),
 
   className: 'list-group-item-container',
 

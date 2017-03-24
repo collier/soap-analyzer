@@ -1,7 +1,7 @@
 
 var ServiceDetailsView = Marionette.LayoutView.extend({
 
-  template: Util.compile('app_components/ServiceDetailsView/ServiceDetailsView.hbs'),
+  template: Util.compile('app_components/views/ServiceDetailsView/ServiceDetailsView.hbs'),
 
   ui: {
     serviceDetail: '.service-detail',
@@ -30,7 +30,13 @@ var ServiceDetailsView = Marionette.LayoutView.extend({
   },
 
   onBeforeShow: function() {
-    var requestXML = this.model.get('request').request.postData.text;
+    var requestXML = '';
+    if(this.model.get('hideEnvelope')) {
+      var xmlDoc = $.parseXML(this.model.get('request').request.postData.text);
+      requestXML = $(xmlDoc).find('Body').html();
+    } else {
+      requestXML = this.model.get('request').request.postData.text;
+    }
     this.model.set('prettyRequestXML', html_beautify(requestXML, Config.JS_BEAUTIFY_CONFIG));
     this.showChildView('requestPane', new RequestView({
       model: this.model

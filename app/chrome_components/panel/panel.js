@@ -6,7 +6,13 @@ app.addRegions({
 });
 
 app.on('start', function () {
-  app.content.show(new NetworkView());
+  chrome.storage.sync.get(null, function(settings) {
+    app.content.show(new NetworkView({
+      model: new Backbone.Model({
+        settings: settings
+      })
+    }));
+  });
 });
 
 app.start();

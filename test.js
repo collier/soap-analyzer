@@ -1,5 +1,24 @@
 $(document).ready(function() {
-  console.log('hellow world');
-  document.getElementById('xmlFrame').setAttribute('src', 'data:text/xml,<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><GetAllTasksForUser xmlns="http://schemas.cordys.com/notification/workflow/1.0"><Target type="user">cn=areber,cn=authenticated users,cn=cordys,cn=GDIT_BPM,o=ad.mosys</Target><ShowNonWorkableItems>false</ShowNonWorkableItems><ReturnTaskData>true</ReturnTaskData><OrderBy>Task.StartDate DESC</OrderBy></GetAllTasksForUser></soapenv:Body></soapenv:Envelope>');
+
+  $('.make-call').click(function() {
+    $.ajax({
+      url: 'http://example.com', 
+      type: 'POST',
+      dataType: 'xml',
+      contentType: 'text/xml',
+      processData: false,
+      data: [
+        '<soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">',
+          '<soapenv:Body>',
+            '<CompleteGiveKudos>',
+              '<VendorNumber></VendorNumber>',
+              '<MessageText></MessageText>',
+            '</CompleteGiveKudos>',
+          '</soapenv:Body>',
+        '</soapenv:Envelope>'
+      ].join(''),
+      success: function(data) { console.log(data) }
+    });
+  });
+  
 });
-// console.log(document.getElementById('xmlFrame'));
