@@ -1,0 +1,25 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.3.0",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "devtools_page": "html/devtools.html",
+  "icons": {
+    "16": "img/code-16.png",
+    "128": "img/code-128.png"
+  },
+  "default_locale": "en",
+  "options_page": "html/options.html",
+  "background": {
+    "scripts": [
+      "chromereload.js",
+      "background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "storage"
+  ]
+}
