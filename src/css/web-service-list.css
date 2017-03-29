@@ -1,0 +1,40 @@
+.WebServiceList {
+  padding-right: 0;
+  overflow-y: auto;
+  height: calc(100vh - 30px);
+  border-right: 1px solid #ddd;
+}
+
+.WebServiceList .list-group-item:nth-child(2n) {  
+  background-color: #f5f5f5;
+}
+
+.WebServiceList .list-group-item:first-child,
+.WebServiceList .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.WebServiceList .list-group-item:first-child {
+  border-top: 0;
+}
+
+.WebServiceList .list-group-item {
+  padding: 6px 15px;
+  line-height: 100%;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 0;
+  -webkit-user-select: none;
+}
+
+.WebServiceList .list-group-item.selected {
+  background-color: rgb(56, 121, 217);
+  color: white;
+}
+
+.WebServiceList .list-group-item:hover {
+  text-decoration: underline;
+}

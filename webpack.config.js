@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -47,9 +48,15 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'src' }
-    ], {
-      ignore: ['*.js']
+      { from: 'src/_locales', to: '_locales' },
+      { from: 'src/html', to: 'html'  },
+      { from: 'src/img', to: 'img'  },
+      { from: 'src/manifest.json' }
+    ]),
+    new webpack.ProvidePlugin({   
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
     })
   ],
   watch: true
