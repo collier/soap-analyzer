@@ -30,11 +30,11 @@ module.exports = {
       }, 
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        loader: 'file-loader'
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+        loader: 'file-loader'
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
@@ -42,15 +42,15 @@ module.exports = {
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+        loader: 'file-loader'
       }
     ]
   },
   plugins: [
     new CopyWebpackPlugin([
       { from: 'src/_locales', to: '_locales' },
-      { from: 'src/html', to: 'html'  },
       { from: 'src/img', to: 'img'  },
+      { from: 'src/html'  },
       { from: 'src/manifest.json' }
     ]),
     new webpack.ProvidePlugin({   

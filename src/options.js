@@ -1,22 +1,21 @@
 
-// Event listeners
-$(document).on('DOMContentLoaded', function() { restoreOptions() });
-$('.save').click(function() { saveSettings() });
+import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.css';
+import './css/options.css';
 
-// Restores state from chrome.storage.
-function restoreOptions() {
-  chrome.storage.sync.get({
-    useDarkTheme: false
-  }, function(settings) {
+const defaultSettings = { 
+  useDarkTheme: false 
+};
+
+$(document).on('DOMContentLoaded', () => { 
+  chrome.storage.sync.get(defaultSettings, (settings) => {
     $('.dark-mode').prop('checked', settings.useDarkTheme);
-  });
-}
+  }); 
+});
 
-// Saves options to chrome.storage
-function saveSettings() {
-  chrome.storage.sync.set({
+$('.save').click(() => { 
+  const formData = {
     useDarkTheme: $('.dark-mode').is(':checked')
-  }, function() {
-    alert('Settings Saved!')
-  });
-}
+  };
+  chrome.storage.sync.set(formData, () => alert('Settings Saved!')); 
+});

@@ -1,0 +1,20 @@
+html {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  font-family: 'Segoe UI', Tahoma, sans-serif !important;
+}
+
+.App .web-service-list-container {
+  padding-right: 0;
+  overflow-y: auto;
+  height: calc(100vh - 30px);
+  border-right: 1px solid #ddd;
+}
+
+.App .web-service-details-container {
+  overflow: hidden;
+  padding-left: 0px;
+}

@@ -31,9 +31,14 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "humanize-plus": "^1.8.2",
     "jquery": "^3.2.1",
+    "js-beautify": "^1.6.12",
+    "moment": "^2.18.1",
     "react": "^15.4.2",
+    "react-codemirror": "^0.3.0",
     "react-dom": "^15.4.2",
+    "uuid": "^3.0.1",
     "xml2js": "^0.4.17"
   }
 }

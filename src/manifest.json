@@ -3,13 +3,13 @@
   "version": "0.3.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
-  "devtools_page": "html/devtools.html",
+  "devtools_page": "devtools.html",
   "icons": {
     "16": "img/code-16.png",
     "128": "img/code-128.png"
   },
   "default_locale": "en",
-  "options_page": "html/options.html",
+  "options_page": "options.html",
   "background": {
     "scripts": [
       "chromereload.js",

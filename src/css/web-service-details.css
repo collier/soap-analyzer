@@ -1,0 +1,35 @@
+.WebServiceDetails .service-detail,
+.WebServiceDetails .CodeMirror {
+  overflow-y: auto;
+  height: calc(100vh - 74px);
+}
+
+.WebServiceDetails .tab-pane {
+  white-space: pre-wrap;
+}
+
+.WebServiceDetails .nav-tabs {
+  height: 34px;
+}
+
+.WebServiceDetails .nav-tabs > li > a, 
+.WebServiceDetails .nav-tabs > li > a:hover, 
+.WebServiceDetails .nav-tabs > li > a:focus {
+  height: 34px;
+  line-height: 1.5;
+}
+
+.WebServiceDetails .nav-tabs > li.active > a, 
+.WebServiceDetails .nav-tabs > li.active > a:hover, 
+.WebServiceDetails .nav-tabs > li.active > a:focus {
+  border-top-color: transparent;
+  background-color: #428bca;
+  color: #fff;
+  border-color: transparent;
+}
+
+.WebServiceDetails .nav-tabs > li > a {
+  border-radius: 0;
+  padding: 5px 15px;
+  user-select: none;
+}

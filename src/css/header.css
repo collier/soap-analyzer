@@ -10,3 +10,11 @@
   font-size: 12px;
   user-select: none;
 }
+
+.Header .glyphicon {
+  margin-right: 5px;
+}
+
+.Header .btn {
+  margin-right: 10px;
+}

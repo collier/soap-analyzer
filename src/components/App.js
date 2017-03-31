@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
-import { parseString } from 'xml2js';
-import { stripPrefix } from 'xml2js/lib/processors';
 import Header from './Header';
 import WebServiceList from './WebServiceList';
+import WebServiceDetails from './WebServiceDetails';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../css/app.css';
+import '../css/theme-dark.css';
+import uuidV1 from 'uuid/v1';
+import { parseString } from 'xml2js';
+import { stripPrefix } from 'xml2js/lib/processors';
 
 export default class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      serviceList: []
+      serviceList: [],
+      activeService: undefined
     };
   }
 
   componentDidMount() {
-    this.setNetworkListener();
-  }
-
-  setNetworkListener() {
-    const self = this;
+    var self = this;
     chrome.devtools.network.onRequestFinished.addListener(request => {
       const headers = request.request.headers;
       const contentType = headers.find(header => header.name === 'Content-Type');
@@ -33,31 +34,57 @@ export default class App extends Component {
           }, (err, result) => {
             const serviceBody = result.Envelope.Body[0]
             const webServiceName = Object.getOwnPropertyNames(serviceBody)[0];
-            self.setState(prevState => ({ 
-              serviceList: prevState.serviceList.concat({
-                name: webServiceName,
-                request: request
-              })
-            }));
+            self.addService({
+              id: uuidV1(),
+              name: webServiceName,
+              request 
+            });
           });
         }
       }
     });
   }
 
+  addService(service) {
+    this.setState(prevState => ({ 
+      serviceList: prevState.serviceList.concat(service)
+    }));
+  }
+
+  setActiveService(service) {
+    this.setState(prevState => ({ 
+      activeService: service
+    }));
+  }
+
+  clearServices() {
+    this.setState(prevState => ({ 
+      serviceList: [],
+      activeService: undefined
+    }));
+  }
+
   render() {
+    const theme = this.props.settings.useDarkTheme ? 'theme-dark' : '';
     return (
-      <div className={this.props.settings.useDarkTheme ? 'theme-dark' : ''}> 
-        <Header />
+      <div className={'App ${theme}'}> 
+        <Header 
+          {...this.state} 
+          clearServices={this.clearServices}
+        />
         <div className="row">
-          <div className="col-md-3">
-            <WebServiceList {...this.state} />
+          <div className="col-md-3 web-service-list-container">
+            <WebServiceList 
+              {...this.state} 
+              setActiveService={this.setActiveService.bind(this)}
+            />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9 web-service-details-container">
+            <WebServiceDetails {...this.state} {...this.props} />
           </div>
         </div>
       </div>
     );
   }
-
+  
 }
