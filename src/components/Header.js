@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/header.css';
 
-export default ({ clearServices }) => (
+export default ({ clearServices, toggleOnlyShowBody }) => (
   <div className="Header form-inline">
     <div className="form-group">
       <button className="btn btn-primary btn-xs" onClick={clearServices}>
@@ -9,9 +9,9 @@ export default ({ clearServices }) => (
         clear
       </button>
       <div className="checkbox">
-        <label>
+        <label onClick={toggleOnlyShowBody}>
           <input type="checkbox" className="hide-envelope-body" /> 
-          Hide Soap Envelope & Body
+          Only Show Body
         </label>
       </div>
     </div>

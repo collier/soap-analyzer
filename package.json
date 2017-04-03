@@ -4,7 +4,9 @@
   "description": "A DevTools extension for monitoring SOAP traffic.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --env=dev",
+    "build:dist": "webpack --env=prod"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,13 @@
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
     "path": "^0.12.7",
+    "progress-bar-webpack-plugin": "^1.9.3",
     "style-loader": "^0.16.1",
+    "uglifyjs-webpack-plugin": "^0.4.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.3.1"
+    "webpack": "^2.3.1",
+    "webpack-merge": "^4.1.0",
+    "zip-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -39,6 +45,7 @@
     "react-codemirror": "^0.3.0",
     "react-dom": "^15.4.2",
     "uuid": "^3.0.1",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "xmldom": "^0.1.27"
   }
 }

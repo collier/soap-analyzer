@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import uuidV1 from 'uuid/v1';
+import { parseString } from 'xml2js';
+import { stripPrefix } from 'xml2js/lib/processors';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
 import Header from './Header';
@@ -7,9 +10,6 @@ import WebServiceDetails from './WebServiceDetails';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/app.css';
 import '../css/theme-dark.css';
-import uuidV1 from 'uuid/v1';
-import { parseString } from 'xml2js';
-import { stripPrefix } from 'xml2js/lib/processors';
 
 export default class App extends Component {
 
@@ -17,7 +17,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       serviceList: [],
-      activeService: undefined
+      activeService: undefined,
+      onlyShowBody: false
     };
   }
 
@@ -64,6 +65,10 @@ export default class App extends Component {
     }));
   }
 
+  toggleOnlyShowBody() {
+    this.setState(prevState => ({ onlyShowBody: !prevState.onlyShowBody }));
+  }
+
   render() {
     const theme = this.props.settings.useDarkTheme ? 'theme-dark' : '';
     return (
@@ -71,6 +76,7 @@ export default class App extends Component {
         <Header 
           {...this.state} 
           clearServices={this.clearServices}
+          toggleOnlyShowBody={this.toggleOnlyShowBody}
         />
         <div className="row">
           <div className="col-md-3 web-service-list-container">

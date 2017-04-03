@@ -1,0 +1,7 @@
+.WebServiceStats {
+  padding: 10px;
+}
+
+.WebServiceStats .key {
+  font-weight: bold;
+}
