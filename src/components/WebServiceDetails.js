@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { html as beautifyHTML } from 'js-beautify';
 import CodeMirror from 'react-codemirror';
-import Humanize from 'humanize-plus';
-import moment from 'moment';
-import { DOMParser } from 'xmldom';
 import WebServiceStats from './WebServiceStats';
 import 'codemirror/mode/xml/xml';
 import 'codemirror/lib/codemirror.css';
@@ -37,8 +34,6 @@ export default class WebServiceDetails extends Component {
     //Check if object is empty
     if(!this.props.activeService) return null;
     const rawRequestXML = this.props.activeService.request.request.postData.text;
-    const doc = new DOMParser().parseFromString(rawRequestXML);
-    console.log(doc.documentElement.getElementsByTagName('Body'));
     const codeMirrorOptions = {
       mode: 'xml',
       tabSize: 2,
@@ -59,7 +54,7 @@ export default class WebServiceDetails extends Component {
             <CodeMirror value={prettyRequestXML} options={codeMirrorOptions} />
           </div>
           <div role="tabpanel" className="tab-pane" id="response">
-            <CodeMirror value={this.state.prettyReponsesXML} options={codeMirrorOptions} />
+            <CodeMirror value={this.state.prettyResponseXML} options={codeMirrorOptions} />
           </div>
           <div role="tabpanel" className="tab-pane" id="details">
             <WebServiceStats webService={this.props.activeService} />

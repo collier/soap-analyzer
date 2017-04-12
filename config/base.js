@@ -12,7 +12,7 @@ module.exports = function() {
       panel: './src/panel.js'
     },
     output: {
-      path: path.resolve(__dirname, '../dist'),
+      path: path.resolve(__dirname, '../build/dist'),
       filename: '[name].js'
     },
     module: {

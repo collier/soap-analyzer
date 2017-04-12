@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import '../css/web-service-list.css';
 
-export default ({ serviceList, activeService, setActiveService }) => {
+export default ({ serviceList, setActiveService }) => {
   const serviceItems = serviceList.map(service => {
-    const isActiveService = activeService && (activeService.id === service.id);
-    const selected = isActiveService ? 'selected' : '';
     const itemProps = {
       key: service.id,
-      className: 'list-group-item ${selected}',
-      onClick: () => setActiveService(service)
+      className: `list-group-item ${service.isActive ? 'selected' : ''}`,
+      onClick: () => setActiveService(service.id)
     };
     return <li {...itemProps}>{service.name}</li>;
   });

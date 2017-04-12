@@ -16,9 +16,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      serviceList: [],
-      activeService: undefined,
-      onlyShowBody: false
+      services: []
     };
   }
 
@@ -38,7 +36,8 @@ export default class App extends Component {
             self.addService({
               id: uuidV1(),
               name: webServiceName,
-              request 
+              isActive: false,
+              request
             });
           });
         }
@@ -48,45 +47,45 @@ export default class App extends Component {
 
   addService(service) {
     this.setState(prevState => ({ 
-      serviceList: prevState.serviceList.concat(service)
+      services: prevState.services.concat(service)
     }));
   }
 
-  setActiveService(service) {
-    this.setState(prevState => ({ 
-      activeService: service
-    }));
+  setActiveService(serviceId) {
+    const services = this.state.services.map((service) => {
+      if(service.id === serviceId) {
+        return {...service, isActive: true };
+      } else {
+        return {...service, isActive: false };
+      }
+    });
+    this.setState(prevState => ({ services }));
   }
 
   clearServices() {
     this.setState(prevState => ({ 
-      serviceList: [],
-      activeService: undefined
+      services: []
     }));
-  }
-
-  toggleOnlyShowBody() {
-    this.setState(prevState => ({ onlyShowBody: !prevState.onlyShowBody }));
   }
 
   render() {
     const theme = this.props.settings.useDarkTheme ? 'theme-dark' : '';
+    const activeService = this.state.services.find(service => service.isActive);
     return (
-      <div className={'App ${theme}'}> 
-        <Header 
-          {...this.state} 
-          clearServices={this.clearServices}
-          toggleOnlyShowBody={this.toggleOnlyShowBody}
-        />
+      <div className={`App ${theme}`}> 
+        <Header clearServices={this.clearServices.bind(this)} />
         <div className="row">
           <div className="col-md-3 web-service-list-container">
             <WebServiceList 
-              {...this.state} 
+              services={this.state.services} 
               setActiveService={this.setActiveService.bind(this)}
             />
           </div>
           <div className="col-md-9 web-service-details-container">
-            <WebServiceDetails {...this.state} {...this.props} />
+            <WebServiceDetails 
+              activeService={activeService}
+              {...this.props} 
+            />
           </div>
         </div>
       </div>
