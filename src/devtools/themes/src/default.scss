@@ -1,0 +1,39 @@
+ /*
+  |--------------------------------------------------------------------------
+  | Default Theme
+  |--------------------------------------------------------------------------
+  */
+ 
+// Global Variables
+$theme-name: default;
+$border-color: #ddd;
+
+// App Variables
+$app-background-color: inherit;
+
+// Header Variables
+$header-font-color: inherit;
+$header-background-color: inherit;
+
+// Tab Variables
+$tab-font-color: inherit;
+$tab-active-font-color: #fff;
+$tab-active-background-color: #428bca;
+$tab-focus-font-color: inherit;
+$tab-focus-background-color: #eee;
+
+// Service Details Variables
+$sd-font-color: inherit;
+$sd-background-color: inherit;
+
+// Service List Variables
+$sl-border: 1px solid #ddd;
+$sl-font-color: inherit;
+$sl-background-color: inherit;
+$sl-hover-color: inherit;
+$sl-active-background-color: rgb(56, 121, 217);
+$sl-active-font-color: #fff;
+$sl-even-background-color: #f5f5f5;
+$sl-odd-background-color: inherit;
+
+@import './_base';

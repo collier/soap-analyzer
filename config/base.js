@@ -1,15 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function() {
   return {
     entry: {
-      background: './src/background.js',
-      chromereload: './src/chromereload.js',
-      options: './src/options.js',
-      devtools: './src/devtools.js',
-      panel: './src/panel.js'
+      background: './src/background/background.js',
+      chromereload: './src/background/chromereload.js',
+      options: './src/options/options.js',
+      devtools: './src/devtools/devtools.js',
+      panel: ['babel-polyfill', './src/devtools/panel.js']
     },
     output: {
       path: path.resolve(__dirname, '../build/dist'),
@@ -30,6 +31,14 @@ module.exports = function() {
           ]
         }, 
         {
+          test: /\.scss$/,
+          use: [
+            { loader: "style-loader" }, 
+            { loader: "css-loader" }, 
+            { loader: "sass-loader" }
+          ]
+        },
+        {
           test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
           loader: 'file-loader'
         },
@@ -48,15 +57,29 @@ module.exports = function() {
       ]
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        chunks: ['devtools'],
+        template: './config/_html-template.ejs',
+        filename: 'devtools.html'
+      }),
+      new HtmlWebpackPlugin({
+        chunks: ['panel'],
+        template: './config/_html-template.ejs',
+        filename: 'panel.html'
+      }),
+      new HtmlWebpackPlugin({
+        chunks: ['options'],
+        template: './config/_html-template.ejs',
+        filename: 'options.html'
+      }),
       new CopyWebpackPlugin([
-        { from: './src/_locales', to: '_locales' },
-        { from: './src/img', to: 'img'  },
-        { from: './src/html'  },
-        { from: './src/manifest.json' }
+        { from: './src/_metadata/locales', to: '_locales' },
+        { from: './src/_metadata/img', to: 'img'  },
+        { from: './src/_metadata/manifest.json' }
       ]),
       new webpack.ProvidePlugin({   
-        jQuery: 'jquery',
         $: 'jquery',
+        jQuery: 'jquery',
         jquery: 'jquery'
       })
     ],

@@ -1,12 +1,12 @@
 {
   "name": "soap-analyzer",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A DevTools extension for monitoring SOAP traffic.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --env=dev",
-    "build:dist": "webpack --env=prod"
+    "build:prod": "webpack --env=prod"
   },
   "repository": {
     "type": "git",
@@ -21,14 +21,19 @@
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
+    "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "progress-bar-webpack-plugin": "^1.9.3",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.16.1",
     "uglifyjs-webpack-plugin": "^0.4.0",
     "webpack": "^2.3.1",
@@ -36,13 +41,17 @@
     "zip-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bootstrap": "^3.3.7",
+    "brace": "^0.10.0",
     "humanize-plus": "^1.8.2",
+    "immutable": "^3.8.1",
     "jquery": "^3.2.1",
     "js-beautify": "^1.6.12",
     "moment": "^2.18.1",
     "react": "^15.4.2",
-    "react-codemirror": "^0.3.0",
+    "react-ace": "^5.0.1",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "uuid": "^3.0.1",
     "xml2js": "^0.4.17"

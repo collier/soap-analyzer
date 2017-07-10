@@ -1,6 +1,6 @@
 
 chrome.devtools.panels.create(
   'SOAP', 
-  'img/code-16.png', 
+  '../_img/code-16.png', 
   'panel.html'
 );

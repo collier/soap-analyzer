@@ -1,9 +1,3 @@
-.WebServiceDetails .service-detail,
-.WebServiceDetails .CodeMirror {
-  overflow-y: auto;
-  height: calc(100vh - 74px);
-}
-
 .WebServiceDetails .tab-pane {
   white-space: pre-wrap;
 }
@@ -23,8 +17,6 @@
 .WebServiceDetails .nav-tabs > li.active > a:hover, 
 .WebServiceDetails .nav-tabs > li.active > a:focus {
   border-top-color: transparent;
-  background-color: #428bca;
-  color: #fff;
   border-color: transparent;
 }
 

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../css/header.css';
+import React from 'react';
+import './Header.css';
 
 export default ({ clearServices }) => (
   <div className="Header form-inline">

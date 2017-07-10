@@ -1,0 +1,39 @@
+ /*
+  |--------------------------------------------------------------------------
+  | Dark Theme
+  |--------------------------------------------------------------------------
+  */
+ 
+// Global Variables
+$theme-name: dark;
+$border-color: rgb(80, 80, 80);
+
+// App Variables
+$app-background-color: rgb(36, 36, 36);
+
+// Header Variables
+$header-font-color: #b9b9b9;
+$header-background-color: rgb(36, 36, 36);
+
+// Tab Variables
+$tab-font-color: #fff;
+$tab-active-font-color: #fff;
+$tab-active-background-color: #5f5f5f;
+$tab-focus-font-color: #000;
+$tab-focus-background-color: #c7c7c7;
+
+// Service Details Variables
+$sd-font-color: #fff;
+$sd-background-color: rgb(36, 36, 36);
+
+// Service List Variables
+$sl-border: 0;
+$sl-font-color: #fff;
+$sl-background-color: rgb(41, 41, 41);
+$sl-hover-color: rgba(199, 134, 38, 0.0980392);
+$sl-active-background-color: rgb(56, 121, 217);
+$sl-active-font-color: #fff;
+$sl-even-background-color: #333;
+$sl-odd-background-color: rgb(41, 41, 41);
+
+@import './_base';
