@@ -22,36 +22,36 @@ module.exports = function() {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
-        }, 
+        },
         {
           test: /\.css$/,
           use: [
             { loader: 'style-loader' },
             { loader: 'css-loader' }
           ]
-        }, 
+        },
         {
           test: /\.scss$/,
           use: [
-            { loader: "style-loader" }, 
-            { loader: "css-loader" }, 
+            { loader: "style-loader" },
+            { loader: "css-loader" },
             { loader: "sass-loader" }
           ]
         },
         {
-          test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
+          test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
           loader: 'file-loader'
         },
         {
-          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
+          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
           loader: 'file-loader'
         },
         {
-          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
           loader: 'file-loader'
         },
         {
-          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
           loader: 'file-loader'
         }
       ]
@@ -77,7 +77,8 @@ module.exports = function() {
         { from: './src/_metadata/img', to: 'img'  },
         { from: './src/_metadata/manifest.json' }
       ]),
-      new webpack.ProvidePlugin({   
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
         jquery: 'jquery'

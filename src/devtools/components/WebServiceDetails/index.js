@@ -34,7 +34,7 @@ export default class WebServiceDetails extends Component {
       tabSize: 2,
       readOnly: true,
       width: 'inherit',
-      height: 'calc(100vh - 63px)',
+      height: 'calc(100vh - 28px)',
       showPrintMargin: false,
       highlightActiveLine: false,
       editorProps: {$blockScrolling: true}

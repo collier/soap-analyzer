@@ -10,7 +10,7 @@ html {
 .App .web-service-list-container {
   padding-right: 0;
   overflow-y: auto;
-  height: calc(100vh - 30px);
+  height: 100vh;
   border-right: 1px solid;
 }
 

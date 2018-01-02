@@ -3,14 +3,13 @@
   | Base Theme Styles
   |--------------------------------------------------------------------------
   */
- 
+
 .theme-#{$theme-name} {
 
-  // App Styles
   .App > .row {
     background-color: $app-background-color;
   }
-  
+
   // Header Styles
   .Header {
     background-color: $header-background-color;
@@ -35,8 +34,8 @@
     color: $tab-active-font-color;
   }
 
-  .WebServiceDetails .nav > li > a:focus, 
-  .WebServiceDetails .nav > li > a:hover {
+  .WebServiceDetails .nav > li:not(.active) > a:focus,
+  .WebServiceDetails .nav > li:not(.active) > a:hover {
     background-color: $tab-focus-background-color;
     color: $tab-focus-font-color;
   }
@@ -60,7 +59,7 @@
   }
 
   .WebServiceList .list-group-item {
-    border: $sl-border;
+    border-top: $sl-border;
     color: $sl-font-color;
   }
 
@@ -68,11 +67,11 @@
     background-color: $sl-hover-color;
   }
 
-  .WebServiceList .list-group-item:nth-child(2n) {  
+  .WebServiceList .list-group-item:nth-child(2n) {
     background-color: $sl-even-background-color;
   }
 
-  .WebServiceList .list-group-item:nth-child(2n+1) {  
+  .WebServiceList .list-group-item:nth-child(2n+1) {
     background-color: $sl-odd-background-color;
   }
 
@@ -80,5 +79,5 @@
     background-color: $sl-active-background-color;
     color: $sl-active-font-color;
   }
-  
+
 }

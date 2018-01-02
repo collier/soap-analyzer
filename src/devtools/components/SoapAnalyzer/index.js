@@ -5,10 +5,10 @@ import WebServiceDetails from '../WebServiceDetails';
 
 export default (props) => (
   <div className={`theme-${props.settings.theme}`}>
-    <div className="App"> 
-      <Header {...props} />
+    <div className="App">
       <div className="row">
         <div className="col-md-3 web-service-list-container">
+          <Header {...props} />
           <WebServiceList {...props} />
         </div>
         <div className="col-md-9 web-service-details-container">

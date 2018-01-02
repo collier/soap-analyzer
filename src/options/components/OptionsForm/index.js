@@ -1,26 +1,30 @@
 import React from 'react';
-import { fromJS } from 'immutable';
 import './OptionsForm.css';
 
 export default class OptionsForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { settings : fromJS(props.settings) };
+    this.state = { settings : props.settings };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
     const { name, value } = event.target;
-    this.setState(({ settings }) => {
-      const newSettings = settings.set(name, value);
-      chrome.storage.sync.set(newSettings.toJS());
-      return { settings: newSettings };
+    this.setState((prevState) => {
+      const newState = {
+        settings: {
+          ...prevState.settings,
+          [name]: value
+        }
+      };
+      chrome.storage.sync.set(newState.settings);
+      return newState;
     });
   }
 
   render() {
-    const { theme } = this.state.settings.toJS();
+    const { theme } = this.state.settings;
     return (
       <form className="options container">
         <h1>SOAP Analyzer Options</h1>

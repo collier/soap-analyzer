@@ -1,13 +1,10 @@
 import 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import defaultSettings from './defaults';
 import OptionsForm from './components/OptionsForm';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-
-const defaultSettings = { 
-  theme: 'default' 
-};
 
 chrome.storage.sync.get(defaultSettings, (settings) => {
   ReactDOM.render(
