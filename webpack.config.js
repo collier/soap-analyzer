@@ -79,8 +79,8 @@ const common = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: './src/locales', to: '_locales' },
-      { from: './src/img', to: 'img'  },
+      { from: './src/_metadata/locales', to: '_locales' },
+      { from: './src/_metadata/img', to: 'img'  },
       { from: './src/_metadata/manifest.json' }
     ]),
     new webpack.optimize.ModuleConcatenationPlugin(),
