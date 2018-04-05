@@ -1,8 +1,8 @@
 import React from 'react';
-import './WebServiceList.css';
+import './ServiceList.css';
 
-export default ({ services, setActiveService }) => {
-  const ServiceItems = services.map((service) => {
+const ServiceList = ({ services, setActiveService }) => {
+  const serviceItems = services.map((service) => {
     const isSelectedClass = service.isActive ? 'selected' : '';
     const attrs = {
       key: service.id,
@@ -12,8 +12,12 @@ export default ({ services, setActiveService }) => {
     return <li {...attrs}>{service.name}</li>;
   });
   return (
-    <div className="WebServiceList">
-      <ul className="list-group">{ServiceItems}</ul>
+    <div className="ServiceList">
+      <ul className="list-group">
+        {serviceItems}
+      </ul>
     </div>
   );
 }
+
+export default ServiceList;

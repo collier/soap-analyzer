@@ -21,21 +21,21 @@
   }
 
   // Tab Variables
-  .WebServiceDetails .nav-tabs {
+  .ServicePanel .nav-tabs {
     border-color: $border-color;
   }
 
-  .WebServiceDetails .nav-tabs > li > a {
+  .ServicePanel .nav-tabs > li > a {
     color: $tab-font-color;
   }
 
-  .WebServiceDetails .nav-tabs > li.active > a {
+  .ServicePanel .nav-tabs > li.active > a {
     background-color: $tab-active-background-color;
     color: $tab-active-font-color;
   }
 
-  .WebServiceDetails .nav > li:not(.active) > a:focus,
-  .WebServiceDetails .nav > li:not(.active) > a:hover {
+  .ServicePanel .nav > li:not(.active) > a:focus,
+  .ServicePanel .nav > li:not(.active) > a:hover {
     background-color: $tab-focus-background-color;
     color: $tab-focus-font-color;
   }
@@ -45,7 +45,7 @@
     background-color: $sd-background-color;
   }
 
-  .WebServiceDetails .service-detail {
+  .ServicePanel .service-detail {
     color: $sd-font-color;
   }
 
@@ -54,28 +54,28 @@
     border-color: $border-color;
   }
 
-  .WebServiceList {
+  .ServiceList {
     background-color: $sl-background-color;
   }
 
-  .WebServiceList .list-group-item {
+  .ServiceList .list-group-item {
     border-top: $sl-border;
     color: $sl-font-color;
   }
 
-  .WebServiceList .list-group-item:not(.selected):hover {
+  .ServiceList .list-group-item:not(.selected):hover {
     background-color: $sl-hover-color;
   }
 
-  .WebServiceList .list-group-item:nth-child(2n) {
+  .ServiceList .list-group-item:nth-child(2n) {
     background-color: $sl-even-background-color;
   }
 
-  .WebServiceList .list-group-item:nth-child(2n+1) {
+  .ServiceList .list-group-item:nth-child(2n+1) {
     background-color: $sl-odd-background-color;
   }
 
-  .WebServiceList .list-group-item.selected {
+  .ServiceList .list-group-item.selected {
     background-color: $sl-active-background-color;
     color: $sl-active-font-color;
   }

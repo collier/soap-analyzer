@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { html as beautifyHTML } from 'js-beautify';
 import uuidV4 from 'uuid/v4';
-import SoapAnalyzer from '../SoapAnalyzer';
+import SoapAnalyzer from '../SoapAnalyzer/SoapAnalyzer';
 import { isSOAPRequest, getWebServiceName } from '../../util';
 import './App.css';
 
-export default class App extends Component {
-
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { services : [] };
@@ -64,13 +63,13 @@ export default class App extends Component {
   }
 
   addService(service) {
-    this.setState(({ services }) => ({ 
+    this.setState(({ services }) => ({
       services: services.concat(service)
     }));
   }
 
   clearServices() {
-    this.setState(() => ({ 
+    this.setState(() => ({
       services: []
     }));
   }
@@ -83,7 +82,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <SoapAnalyzer 
+      <SoapAnalyzer
         services={this.state.services}
         settings={this.props.settings}
         activeService={this.getActiveService()}
@@ -93,5 +92,6 @@ export default class App extends Component {
       />
     );
   }
-  
 }
+
+export default App;

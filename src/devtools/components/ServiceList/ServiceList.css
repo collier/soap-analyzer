@@ -1,4 +1,9 @@
-.WebServiceList .list-group-item {
+.ServiceList {
+  height: calc(100vh - 30px);
+  overflow-y: auto;
+}
+
+.ServiceList .list-group-item {
   padding: 6px 15px;
   line-height: 100%;
   white-space: nowrap;
@@ -7,22 +12,22 @@
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
-  font-size: 12px;
+
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.WebServiceList .list-group-item:hover,
-.WebServiceList .list-group-item:focus  {
+.ServiceList .list-group-item:hover,
+.ServiceList .list-group-item:focus  {
   text-decoration: underline;
 }
 
-.WebServiceList .list-group-item:first-child,
-.WebServiceList .list-group-item:last-child {
+.ServiceList .list-group-item:first-child,
+.ServiceList .list-group-item:last-child {
   border-radius: 0;
 }
 
-.WebServiceList .list-group-item:first-child {
+.ServiceList .list-group-item:first-child {
   border-top: 0 !important;
 }

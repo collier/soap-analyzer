@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import brace from 'brace';
 import AceEditor from 'react-ace';
-import WebServiceStats from '../WebServiceStats';
+import StatList from '../StatList/StatList';
+import Tabs from '../Tabs/Tabs';
+import TabPanel from '../TabPanel/TabPanel';
 import 'brace/theme/github';
 import 'brace/theme/tomorrow_night';
 import 'brace/mode/xml';
-import './WebServiceDetails.css';
+import './ServicePanel.css';
 
-export default class WebServiceDetails extends Component {
-
+class ServicePanel extends React.Component {
   componentDidUpdate() {
     if(this.requestEditor) {
       this.requestEditor.editor.scrollToLine(0, false, false);
@@ -34,7 +35,7 @@ export default class WebServiceDetails extends Component {
       tabSize: 2,
       readOnly: true,
       width: 'inherit',
-      height: 'calc(100vh - 28px)',
+      height: 'calc(100vh - 45px)',
       showPrintMargin: false,
       highlightActiveLine: false,
       editorProps: {$blockScrolling: true}
@@ -48,31 +49,21 @@ export default class WebServiceDetails extends Component {
       ref: (responseEditor) => { this.responseEditor = responseEditor; }
     });
     return (
-      <div className="WebServiceDetails">
-        <ul className="nav nav-tabs" role="tablist">
-          <li className="active">
-            <a data-toggle="tab" href="#request">Request</a>
-          </li>
-          <li>
-            <a data-toggle="tab" href="#response">Response</a>
-          </li>
-          <li>
-            <a data-toggle="tab" href="#details">Details</a>
-          </li>
-        </ul>
-        <div className="service-detail tab-content">
-          <div role="tabpanel" className="tab-pane active" id="request">
+      <div className="ServicePanel">
+        <Tabs>
+          <TabPanel name="Request" id="request" isActive={true} key="1">
             <AceEditor {...requestSettings} />
-          </div>
-          <div role="tabpanel" className="tab-pane" id="response">
+          </TabPanel>
+          <TabPanel name="Response" id="response" key="2">
             <AceEditor {...responseSettings} />
-          </div>
-          <div role="tabpanel" className="tab-pane" id="details">
-            <WebServiceStats webService={activeService} />
-          </div>
-        </div>
+          </TabPanel>
+          <TabPanel name="Details" id="details" key="3">
+            <StatList webService={activeService} />
+          </TabPanel>
+        </Tabs>
       </div>
     );
   }
-
 }
+
+export default ServicePanel;

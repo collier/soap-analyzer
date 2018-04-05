@@ -1,0 +1,20 @@
+.Stat {
+  font-size: 12px;
+}
+
+.Stat .Stat__label {
+  font-weight: bold;
+  color: rgb(33%, 33%, 33%);
+  display: inline-block;
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+.Stat .Stat__value {
+  font-size: 12px;
+  font-family: Consolas, Lucida Console, Courier New, monospace;
+  display: inline;
+  margin-right: 1em;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

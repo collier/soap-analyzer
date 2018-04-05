@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-export default ({ clearServices }) => (
+const Header = ({ clearServices }) => (
   <div className="Header form-inline">
     <div className="form-group">
       <button className="btn btn-primary btn-xs" onClick={clearServices}>
@@ -11,3 +11,5 @@ export default ({ clearServices }) => (
     </div>
   </div>
 );
+
+export default Header;

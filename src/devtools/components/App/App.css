@@ -5,12 +5,11 @@ html {
 
 .App {
   font-family: 'Segoe UI', Tahoma, sans-serif !important;
+  font-size: 12px;
 }
 
 .App .web-service-list-container {
   padding-right: 0;
-  overflow-y: auto;
-  height: 100vh;
   border-right: 1px solid;
 }
 

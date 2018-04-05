@@ -1,0 +1,31 @@
+.ServicePanel .tab-pane {
+  white-space: pre-wrap;
+}
+
+.ServicePanel .nav-tabs {
+  height: 26px;
+  margin-top: 4px;
+  padding-left: 3px;
+}
+
+.ServicePanel .nav-tabs > li > a,
+.ServicePanel .nav-tabs > li > a:hover,
+.ServicePanel .nav-tabs > li > a:focus {
+  height: 21px;
+  line-height: 1.5;
+}
+
+.ServicePanel .nav-tabs > li.active > a,
+.ServicePanel .nav-tabs > li.active > a:hover,
+.ServicePanel .nav-tabs > li.active > a:focus {
+  border-top-color: transparent;
+  border-color: transparent;
+}
+
+.ServicePanel .nav-tabs > li > a {
+  border-radius: 0;
+  padding: 0 7px;
+  user-select: none;
+  border-radius: 15px;
+  font-size: 12px;
+}
