@@ -1,14 +1,32 @@
 .Header {
   border-bottom: 1px solid;
-  height: 30px;
-  padding-top: 2px;
+  height: 28px;
+  padding-top: 3px;
   padding-left: 5px;
+  overflow: hidden;
 }
 
 .Header .form-group {
   margin-left: 10px;
   font-size: 12px;
   user-select: none;
+  display: inline-block;
+}
+
+.Header .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.Header .checkbox label {
+  padding-left: 0;
+}
+
+.Header .checkbox input[type="checkbox"] {
+  position: relative !important;
+  margin-left: 0 !important;
 }
 
 .Header .glyphicon {

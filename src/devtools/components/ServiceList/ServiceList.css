@@ -1,6 +1,10 @@
 .ServiceList {
-  height: calc(100vh - 30px);
+  height: calc(100vh - 28px);
   overflow-y: auto;
+}
+
+.ServiceList .list-group {
+  margin-right: 1px;
 }
 
 .ServiceList .list-group-item {
@@ -12,7 +16,6 @@
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
-
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;

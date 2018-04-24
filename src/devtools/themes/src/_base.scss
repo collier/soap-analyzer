@@ -16,7 +16,8 @@
     border-color: $border-color;
   }
 
-  .Header .form-group {
+  .Header .form-group,
+  .Header label  {
     color: $header-font-color;
   }
 
@@ -78,6 +79,14 @@
   .ServiceList .list-group-item.selected {
     background-color: $sl-active-background-color;
     color: $sl-active-font-color;
+  }
+
+  .Stat .Stat__label {
+    color: $stat-label-color;
+  }
+
+  .Stat .Stat__value {
+    color: $stat-value-color;
   }
 
 }

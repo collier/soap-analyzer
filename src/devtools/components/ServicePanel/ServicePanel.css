@@ -6,6 +6,7 @@
   height: 26px;
   margin-top: 4px;
   padding-left: 3px;
+  overflow: hidden;
 }
 
 .ServicePanel .nav-tabs > li > a,

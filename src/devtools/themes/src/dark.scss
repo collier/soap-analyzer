@@ -31,9 +31,33 @@ $sl-border: 0;
 $sl-font-color: #fff;
 $sl-background-color: rgb(41, 41, 41);
 $sl-hover-color: rgba(199, 134, 38, 0.0980392);
-$sl-active-background-color: rgb(56, 121, 217);
-$sl-active-font-color: #fff;
+$sl-active-background-color: rgb(199, 134, 38);
+$sl-active-font-color: #000;
 $sl-even-background-color: #333;
 $sl-odd-background-color: rgb(41, 41, 41);
+
+// Stat Variables
+$stat-label-color: rgb(171, 171, 171);
+$stat-value-color: rgb(213, 213, 213);
+
+.theme-dark ::-webkit-scrollbar {
+  width: 14px;
+}
+
+.theme-dark ::-webkit-scrollbar-corner {
+  background-color: #242424;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #333;
+  -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.5);
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.5);
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.3);
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.3);
+}
 
 @import './_base';

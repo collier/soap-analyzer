@@ -15,7 +15,6 @@ const TARGET = process.env.npm_lifecycle_event;
 const common = {
   entry: {
     devtools: './src/devtools/devtools.js',
-    options: './src/options/options.js',
     panel: ['babel-polyfill', './src/devtools/panel.js']
   },
   output: {
@@ -54,16 +53,6 @@ const common = {
     new HtmlWebpackPlugin({
       chunks: ['devtools'],
       filename: 'devtools.html',
-      minify: {
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      chunks: ['options'],
-      template: htmlTemplate,
-      filename: 'options.html',
-      appMountId: 'root',
       minify: {
         collapseWhitespace: true
       }

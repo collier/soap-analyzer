@@ -1,5 +1,6 @@
 import { parseString } from 'xml2js';
 import { stripPrefix } from 'xml2js/lib/processors';
+import cheerio from 'cheerio';
 
 var self = module.exports = {
 
@@ -17,12 +18,12 @@ var self = module.exports = {
     return false;
   },
 
-  getWebServiceName: async (rawRequestXML) => {
+  getWebServiceName: async (xml) => {
     return new Promise((resolve, reject) => {
-      const parseConfig = { 
-        tagNameProcessors: [stripPrefix] 
+      const parseConfig = {
+        tagNameProcessors: [stripPrefix]
       };
-      parseString(rawRequestXML, parseConfig, (err, result) => {
+      parseString(xml, parseConfig, (err, result) => {
         if(err) {
           reject(err);
         } else {
@@ -32,6 +33,23 @@ var self = module.exports = {
         }
       });
     });
+  },
+
+  removeXmlns: (xml) => {
+    const $ = cheerio.load(xml, { xmlMode: true });
+    $('*').each((i, elem) => {
+      Object.keys(elem.attribs).forEach(key => {
+        if(key.startsWith('xmlns')) {
+          delete elem.attribs[key];
+        }
+      });
+    });
+    return $.xml();
+  },
+
+  getSoapBodyContents: (xml) => {
+    const $ = cheerio.load(xml, { xmlMode: true });
+    return cheerio.xml($('SOAP\\:Body > :first-child'));
   }
 
 };
