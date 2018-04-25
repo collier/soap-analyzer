@@ -83,15 +83,19 @@ const common = {
 
 if(TARGET === 'start' || !TARGET) {
   module.exports = webpackMerge(common, {
+    mode: 'development',
     watch: true
   });
 }
 
 if(TARGET === 'build') {
   module.exports = webpackMerge(common, {
+    mode: 'production',
+    performance: {
+      hints: false
+    },
     plugins: [
       new ProgressBarPlugin(),
-      new UglifyJSPlugin(),
       new ZipPlugin({
         path: '../packages',
         filename: `${Package.name}-${Manifest.version}.zip`
