@@ -12,7 +12,7 @@ A developer tools chrome extension which allows users to easily track any SOAP H
 
 ## Demo
 
-[Demo](https://i.imgur.com/9DxRc1n.gifv)
+![Demo](https://i.imgur.com/9DxRc1n.gif)
 
 ## Installation and Development
 
