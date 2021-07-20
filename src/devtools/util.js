@@ -21,6 +21,7 @@ var self = module.exports = {
   getWebServiceName: async (xml) => {
     return new Promise((resolve, reject) => {
       const parseConfig = {
+        ignoreAttrs: true,
         tagNameProcessors: [stripPrefix]
       };
       parseString(xml, parseConfig, (err, result) => {
